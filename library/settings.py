@@ -39,7 +39,7 @@ STATIC_URL = 'http://rocky-river-27256.herokuapp.com/static'
 
 # Extra places for collectstatic to find static files.
 STATICFILES_DIRS = (
-    os.path.join(BASE_DIR, 'static'),
+    os.path.join(BASE_DIR, 'src'),
 )
 WEBPACK_LOADER = {
     'DEFAULT': {
