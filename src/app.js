@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import { Switch, Route, Link } from 'react-router-dom';
 
 function Book( { name, author }){
     const [fave, setFave] = useState(false)
@@ -11,14 +12,26 @@ function Book( { name, author }){
 }
 
 function App({ props }){
-    const { one, two, myColor, books } = Object.fromEntries(props)
-    const [color, setColor] = useState(true)
+    // const props = {...Object.fromEntries(data)}
+    const data = {...Object.fromEntries(props)}
+    console.log(data)
     return (
         <>
-        <h1 onClick={() => setColor(c => !c)} style={{color: color ? myColor : 'blue'}}>hello, {one}</h1>
-        <ul>
+        <h1>Hello</h1>
+        <Switch>
+                <Route exact path="/">
+                    <>
+                    <h1>Home</h1>
+                    <a href="/about">About</a>
+                    </>
+                </Route>
+                <Route path="/about">
+                    <h1>about</h1>
+                </Route>
+        </Switch>
+        {/* <ul>
             {books.map(b => <Book name={b.name} author={b.author__name}/>)}
-        </ul>
+        </ul> */}
         </>
     )
 }

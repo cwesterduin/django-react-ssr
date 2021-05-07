@@ -9,6 +9,10 @@ def index(req):
     context = { "data": {"one": "Does it work?", "two": "I wonder.", "myColor": "pink", "books": books} }
     return render(req, 'home.html', context)
 
+
+def about(req):
+    return render(req, 'home.html')
+
 def show(req, id):
     book = Book.objects.get(pk=id)
     return HttpResponse(f'<h3>Book number {id}!</h3><p>{book.name} by {book.author}</p>')
