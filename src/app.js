@@ -25,6 +25,11 @@ function App({ props }){
                     <a href="/about">About</a>
                     </>
                 </Route>
+                <Route path="/:id">
+                    <>
+                    <h1>Book</h1>
+                    </>
+                </Route>
                 <Route path="/about">
                     <h1>about</h1>
                 </Route>

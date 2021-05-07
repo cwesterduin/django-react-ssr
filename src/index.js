@@ -5,6 +5,7 @@ const JSON5 = require('json5')
 import { BrowserRouter as Router } from 'react-router-dom';
 
 const preProps = { ...root.dataset }
+console.log(preProps)
 let props 
     if (preProps.props) {
         props = Object.entries((JSON5.parse(preProps.props)))

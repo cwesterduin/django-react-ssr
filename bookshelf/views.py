@@ -15,5 +15,6 @@ def about(req):
 
 def show(req, id):
     book = Book.objects.get(pk=id)
-    return HttpResponse(f'<h3>Book number {id}!</h3><p>{book.name} by {book.author}</p>')
+    context = { "data": {"book": str(book), "author": str(book.author)} }
+    return render(req, 'home.html', context)
     
