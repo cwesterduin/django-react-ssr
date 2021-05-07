@@ -5,9 +5,11 @@
     <meta charset="UTF-8">
     <title>Example</title>
   </head>
-
   <body>
-    <div id="react-app"></div>
+    <div
+    id="root"
+    data-props="{{ data }}"
+    ></div>
     {% render_bundle 'main' %}
   </body>
 </html>

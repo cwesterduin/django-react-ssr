@@ -4,7 +4,8 @@ from django.shortcuts import get_object_or_404, redirect, render
 from .models import Book
 
 def index(req):
-    return render(req, 'home.html')
+    context = { "data": {"one": "Does it work?", "two": "I wonder.", "myColor": "pink"} }
+    return render(req, 'home.html', context)
 
 def show(req, id):
     book = Book.objects.get(pk=id)
