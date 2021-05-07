@@ -13,7 +13,8 @@ https://docs.djangoproject.com/en/3.2/ref/settings/
 from pathlib import Path
 import sys
 import os
-import django_webpack_loader
+import django_heroku
+
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -44,7 +45,7 @@ WEBPACK_LOADER = {
 # Application definition
 
 INSTALLED_APPS = [
-    'django-webpack-loader',
+    'webpack_loader',   
     'bookshelf.apps.BookshelfConfig',
     'django.contrib.admin',
     'django.contrib.auth',
@@ -140,5 +141,4 @@ STATIC_URL = '/static/'
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 # Configure Django App for Heroku.
-import django_heroku
 django_heroku.settings(locals())
