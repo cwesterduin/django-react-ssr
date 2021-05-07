@@ -15,8 +15,7 @@ import sys
 import os
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
-BASE_DIR = Path(__file__).resolve().parent.parent
-BASE_DIR2 = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
 
 # Quick-start development settings - unsuitable for production
@@ -30,8 +29,9 @@ DEBUG = True
 
 ALLOWED_HOSTS = []
 
+
 STATICFILES_DIRS = (
-    os.path.join(BASE_DIR, 'src'), # We do this so that django's collectstatic copies or our bundles to the STATIC_ROOT or syncs them to whatever storage we use.
+    os.path.join(BASE_DIR, 'assets'), # We do this so that django's collectstatic copies or our bundles to the STATIC_ROOT or syncs them to whatever storage we use.
 )
 
 WEBPACK_LOADER = {
@@ -44,7 +44,7 @@ WEBPACK_LOADER = {
 # Application definition
 
 INSTALLED_APPS = [
-    'webpack_loader',
+    'django-webpack-loader',
     'bookshelf.apps.BookshelfConfig',
     'django.contrib.admin',
     'django.contrib.auth',
