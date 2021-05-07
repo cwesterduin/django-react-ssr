@@ -14,7 +14,7 @@ module.exports = {
   output: {
       path: path.resolve('./src/bundles/'),
       filename: '[name]-[hash].js',
-      publicPath: 'http://localhost:3000/src/bundles/', // Tell django to use this URL to load packages and not use STATIC_URL + bundle_name
+      // publicPath: 'http://localhost:3000/src/bundles/', // Tell django to use this URL to load packages and not use STATIC_URL + bundle_name
   },
 
   plugins: [
@@ -26,7 +26,8 @@ module.exports = {
     // helpers we want webpack to use
     rules: [
       // specific instructions for each helper
-      { test: /\.js$/, exclude: /node_modules/, use: ['react-hot-loader/webpack','babel-loader']}, // transpile JavaScript files
+       { test: /\.js$/, exclude: /node_modules/, use: ['babel-loader']}, // transpile JavaScript files
+      // { test: /\.js$/, exclude: /node_modules/, use: ['react-hot-loader/webpack','babel-loader']}, // transpile JavaScript files
       {
         test: /\.s[ac]ss$/i,
         use: ['style-loader', 'css-loader', 'sass-loader'],
