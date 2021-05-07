@@ -15,7 +15,7 @@ import sys
 import os
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
-BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+BASE_DIR = Path(__file__).resolve().parent.parent
 
 
 # Quick-start development settings - unsuitable for production
@@ -28,7 +28,6 @@ SECRET_KEY = 'django-insecure-d-ogv+7)+g%()hz#t=wq70mi!he5+=axz9&g@wu__wflp22kyl
 DEBUG = True
 
 ALLOWED_HOSTS = []
-
 
 STATICFILES_DIRS = (
     os.path.join(BASE_DIR, 'assets'), # We do this so that django's collectstatic copies or our bundles to the STATIC_ROOT or syncs them to whatever storage we use.
